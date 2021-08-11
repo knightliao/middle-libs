@@ -1,6 +1,7 @@
 package com.github.knightliao.middle.redis.impl;
 
 import com.github.knightliao.middle.redis.IMyRedisService;
+import com.github.knightliao.middle.utils.trans.JsonUtils;
 
 import redis.clients.jedis.JedisCluster;
 
@@ -28,9 +29,10 @@ public class MyRedisServiceImpl implements IMyRedisService {
 
     @Override
     public void set(String key, Integer expireSeconds, Object data) {
-        setRaw(key,expireSeconds,JsonU);
+        setRaw(key, expireSeconds, JsonUtils.toJson(data));
     }
 
+    @Override
     public void setRaw(String key, Integer expireSeconds, String data) {
 
         if (expireSeconds != null) {
@@ -38,6 +40,10 @@ public class MyRedisServiceImpl implements IMyRedisService {
         } else {
             jedisCluster.set(key, data);
         }
+    }
 
+    @Override
+    public void del(String key) {
+        jedisCluster.del(key);
     }
 }
