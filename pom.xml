@@ -44,6 +44,7 @@
     </properties>
 
     <modules>
+        <module>pack-bom</module>
         <module>pack-threadcontext</module>
         <module>pack-log</module>
         <module>pack-utils</module>
