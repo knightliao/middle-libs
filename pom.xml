@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.knightliao.middle</groupId>
+    <artifactId>middle-libs</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>middle-libs</name>
+    <packaging>pom</packaging>
+
+    <properties>
+
+        <!-- 模块版本号 -->
+        <bom.version>0.0.1-SNAPSHOT</bom.version>
+
+        <!-- Spring項目配置 -->
+        <encoding>UTF-8</encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <spring.version>2.3.12.RELEASE</spring.version>
+
+        <!-- JAVA环境 -->
+        <java.version>1.8</java.version>
+        <source.version>1.8</source.version>
+        <target.version>1.8</target.version>
+        <spring.amqp.version>1.4.5.RELEASE</spring.amqp.version>
+        <jsp.version>2.0</jsp.version>
+        <servlet.version>2.5</servlet.version>
+        <cglib.version>2.2.2</cglib.version>
+        <log4j.version>1.2.16</log4j.version>
+        <gson.version>2.5</gson.version>
+        <jackson.version>2.7.0</jackson.version>
+        <netty.version>4.1.12.Final</netty.version>
+        <aspectj.version>1.8.9</aspectj.version>
+        <commons.lang3.version>3.5</commons.lang3.version>
+        <lombok.version>1.14.4</lombok.version>
+
+        <!-- test -->
+        <junit.version>4.12</junit.version>
+        <hamcrest-library.version>1.3</hamcrest-library.version>
+        <project.test.skip>true</project.test.skip>
+    </properties>
+
+    <modules>
+    </modules>
+
+    <dependencies>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>0.8.2.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka_2.9.2</artifactId>
+                <version>0.8.2.0</version>
+                <scope>compile</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jmxri</artifactId>
+                        <groupId>com.sun.jmx</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jms</artifactId>
+                        <groupId>javax.jms</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jmxtools</artifactId>
+                        <groupId>com.sun.jdmk</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.70</version>
+            </dependency>
+
+            <!-- tools -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>0.9.9-RC1</version>
+            </dependency>
+
+            <!-- logger -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 构建 -->
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <finalName>middle-libs</finalName>
+
+        <!-- 覆盖率 mvn test -->
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <formats>
+                        <format>xml</format>
+                        <format>html</format>
+                    </formats>
+                    <aggregate>true</aggregate>
+                    <instrumentation>
+                        <excludes>
+                            <exclude>**/*Proto.class</exclude>
+                            <exclude>**/*Proto$*.class</exclude>
+                            <exclude>**/*Test.class</exclude>
+                        </excludes>
+                    </instrumentation>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>cobertura</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 编译 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <source>${source.version}</source>
+                    <target>${target.version}</target>
+                    <encoding>${encoding}</encoding>
+                    <failOnError>true</failOnError>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <compilerArguments>
+                        <verbose/>
+                        <bootclasspath>${java.home}/lib/rt.jar</bootclasspath>
+                    </compilerArguments>
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.plexus</groupId>
+                        <artifactId>plexus-compiler-javac</artifactId>
+                        <version>1.8.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <!-- JAR包 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+
+            <!-- auto deploy plugin -->
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.2.0</version>
+            </plugin>
+
+            <!-- 单测 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <includes>
+                        <include>**/*TestCase.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 为了github的测试覆盖率 -->
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <doclint>none</doclint>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Liao Qiqi</name>
+            <id>knightliao</id>
+            <email>knightliao@gmail.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>KNIGHT</name>
+        <url>http://www.liaoqiqi.com</url>
+    </organization>
+
+    <scm>
+        <url>scm:git:git@github.com:knightliao/middle-libs</url>
+        <connection>scm:git:git@github.com:knightliao/middle-libs</connection>
+        <tag>middle-libs</tag>
+    </scm>
+
+    <url>https://github.com/knightliao/middle-libs</url>
+    <description>.</description>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>nexus-release</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>nexus-release</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <!-- Source -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Javadoc -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>java8-doclint-disabled</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+            <properties>
+                <javadoc.opts>-Xdoclint:none</javadoc.opts>
+            </properties>
+        </profile>
+    </profiles>
+
+
+</project>
