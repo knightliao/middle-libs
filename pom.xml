@@ -46,6 +46,7 @@
     <modules>
         <module>pack-threadcontext</module>
         <module>pack-log</module>
+        <module>pack-utils</module>
         <module>middle-redis</module>
     </modules>
 
