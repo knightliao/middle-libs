@@ -5,7 +5,7 @@
 
     <groupId>com.github.knightliao.middle</groupId>
     <artifactId>middle-libs</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>middle-libs</name>
     <packaging>pom</packaging>
 
@@ -63,6 +63,7 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
+
     </dependencies>
 
     <dependencyManagement>

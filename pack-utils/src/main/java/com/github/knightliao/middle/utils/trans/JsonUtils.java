@@ -2,6 +2,8 @@ package com.github.knightliao.middle.utils.trans;
 
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,6 +48,19 @@ public class JsonUtils {
             return OBJECT_MAPPER.writeValueAsString(obj);
         } catch (Exception ex) {
             log.error("to json cause exception", ex);
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public static <T> T fromJson(String json, Class<T> clz) {
+
+        if (StringUtils.isBlank(json)) {
+            return null;
+        }
+
+        try {
+            return OBJECT_MAPPER.readValue(json, clz);
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }
