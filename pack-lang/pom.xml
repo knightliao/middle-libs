@@ -9,27 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>middle-redis</artifactId>
+    <artifactId>pack-lang</artifactId>
     <packaging>jar</packaging>
     <version>0.0.7-SNAPSHOT</version>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.knightliao.middle</groupId>
-            <artifactId>pack-utils</artifactId>
-            <version>0.0.7-SNAPSHOT</version>
-        </dependency>
 
     </dependencies>
 

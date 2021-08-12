@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.log.helpers;
+package com.github.knightliao.middle.lang.templates;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

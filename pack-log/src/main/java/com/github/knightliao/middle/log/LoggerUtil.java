@@ -4,7 +4,7 @@ import java.text.MessageFormat;
 
 import org.slf4j.Logger;
 
-import com.github.knightliao.middle.log.helpers.NoErrorTemplate;
+import com.github.knightliao.middle.lang.templates.NoErrorTemplate;
 
 /**
  * @author knightliao
