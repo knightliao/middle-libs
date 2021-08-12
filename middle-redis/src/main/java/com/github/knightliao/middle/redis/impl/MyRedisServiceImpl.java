@@ -68,8 +68,8 @@ public class MyRedisServiceImpl implements IMyRedisService {
     }
 
     @Override
-    public void del(String key) {
-        jedisCluster.del(key);
+    public boolean del(String key) {
+        return jedisCluster.del(key) == 1L;
     }
 
     @Override

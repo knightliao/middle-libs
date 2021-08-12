@@ -22,7 +22,7 @@ public interface IMyRedisService {
 
     String get(String key);
 
-    void del(String key);
+    boolean del(String key);
 
     void hset(String key, String field, Object data, Integer expireSeconds);
 
