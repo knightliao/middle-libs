@@ -9,6 +9,7 @@ some sdks or tools for developing. 一些开发合集
 - middle-redis: redis的封装包
 - pack-bom: 基础软件必使用包，包括 logback, 单元测试test 等
 - pack-idem: 分布式幂等控制包
+- pack-lang: 基础类及领域相关
 - pack-lock: 锁相关包，包括分布式锁
 - pack-log: 日志封装包
 - pack-threadcontext: 线程上下文相关包
