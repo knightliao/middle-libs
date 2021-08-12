@@ -5,7 +5,7 @@
 
     <groupId>com.github.knightliao.middle</groupId>
     <artifactId>middle-libs</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.0.8-SNAPSHOT</version>
     <name>middle-libs</name>
     <packaging>pom</packaging>
 
@@ -45,8 +45,8 @@
 
     <modules>
         <module>pack-bom</module>
-        <module>pack-threadcontext</module>
         <module>pack-lang</module>
+        <module>pack-threadcontext</module>
         <module>pack-log</module>
         <module>pack-utils</module>
         <module>middle-redis</module>

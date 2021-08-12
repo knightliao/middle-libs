@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.lang.net;
+package com.github.knightliao.middle.utils.net;
 
 import java.net.Inet6Address;
 import java.net.InetAddress;
