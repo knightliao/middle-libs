@@ -35,15 +35,20 @@ public class MyRedisDistributeLockImpl implements IMyDistributeLock {
     private static final String LOCK_SUCCESS_CODE = "ok";
 
     public MyRedisDistributeLockImpl(JedisCluster jedisCluster) {
+
+        if (jedisCluster == null) {
+            throw new NullPointerException("jedisCluster is null");
+        }
+
         this.jedisCluster = jedisCluster;
     }
 
     @Override
-    public boolean tryLock(String lockKey, String lockVal, long expireTimeSeconds, long loopTryTime) {
+    public boolean tryLock(String lockKey, String lockVal, long expireTimeMills, long loopTryTime) {
 
         long endTime = System.currentTimeMillis() + loopTryTime;
         while (System.currentTimeMillis() < endTime) {
-            if (tryLock(lockKey, lockVal, expireTimeSeconds)) {
+            if (tryLock(lockKey, lockVal, expireTimeMills)) {
                 return true;
             }
         }
@@ -51,11 +56,11 @@ public class MyRedisDistributeLockImpl implements IMyDistributeLock {
     }
 
     @Override
-    public boolean tryLock(String lockKey, String lockVal, long expireTimeSeconds, int retryTime, long stepTime) {
+    public boolean tryLock(String lockKey, String lockVal, long expireTimeMills, int retryTime, long stepTime) {
 
         while (retryTime > 0) {
 
-            if (tryLock(lockKey, lockVal, expireTimeSeconds)) {
+            if (tryLock(lockKey, lockVal, expireTimeMills)) {
                 return true;
             }
             retryTime--;
@@ -71,11 +76,11 @@ public class MyRedisDistributeLockImpl implements IMyDistributeLock {
     }
 
     @Override
-    public boolean tryLock(String lockKey, String lockVal, long expireTimeSeconds) {
+    public boolean tryLock(String lockKey, String lockVal, long expireTimeMills) {
 
         logger.info("lockKey {}", lockKey);
 
-        String result = jedisCluster.set(lockKey, lockVal, "NX", "PX", expireTimeSeconds);
+        String result = jedisCluster.set(lockKey, lockVal, "NX", "PX", expireTimeMills);
 
         return LOCK_SUCCESS_CODE.equalsIgnoreCase(result);
     }

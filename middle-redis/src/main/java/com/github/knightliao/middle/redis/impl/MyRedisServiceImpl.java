@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import com.github.knightliao.middle.redis.IMyRedisService;
 import com.github.knightliao.middle.utils.trans.JsonUtils;
 
+import lombok.Getter;
 import redis.clients.jedis.JedisCluster;
 
 /**
@@ -17,6 +18,7 @@ import redis.clients.jedis.JedisCluster;
  */
 public class MyRedisServiceImpl implements IMyRedisService {
 
+    @Getter
     private JedisCluster jedisCluster;
 
     public MyRedisServiceImpl(JedisCluster jedisCluster) {

@@ -49,6 +49,8 @@
         <module>pack-log</module>
         <module>pack-utils</module>
         <module>middle-redis</module>
+        <module>pack-idem</module>
+        <module>pack-lock</module>
     </modules>
 
     <dependencies>

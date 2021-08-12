@@ -2,6 +2,8 @@ package com.github.knightliao.middle.redis;
 
 import java.util.Map;
 
+import redis.clients.jedis.JedisCluster;
+
 /**
  * @author knightliao
  * @date 2021/8/11 16:50
@@ -27,4 +29,6 @@ public interface IMyRedisService {
     <T> Map<String, T> hmgetAll(String key, Class<T> myclass);
 
     void hdel(String key, String... field);
+
+    JedisCluster getJedisCluster();
 }
