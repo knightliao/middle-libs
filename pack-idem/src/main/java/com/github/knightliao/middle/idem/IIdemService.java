@@ -5,6 +5,7 @@ import com.github.knightliao.middle.idem.service.callback.IIdemBizCallback;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 12:18
  */
 public interface IIdemService {

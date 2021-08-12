@@ -4,6 +4,7 @@ import com.github.knightliao.middle.idem.exception.IdemException;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 14:39
  */
 public interface IIdemServiceHelper {

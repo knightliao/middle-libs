@@ -4,6 +4,7 @@ import lombok.Getter;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 14:32
  */
 @Getter

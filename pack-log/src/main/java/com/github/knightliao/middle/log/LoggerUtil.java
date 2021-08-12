@@ -8,6 +8,7 @@ import com.github.knightliao.middle.lang.templates.NoErrorTemplate;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/6 21:08
  */
 public class LoggerUtil {

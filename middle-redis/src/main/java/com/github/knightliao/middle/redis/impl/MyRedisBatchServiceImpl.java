@@ -30,6 +30,7 @@ import redis.clients.util.JedisClusterCRC16;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 09:36
  */
 @Slf4j

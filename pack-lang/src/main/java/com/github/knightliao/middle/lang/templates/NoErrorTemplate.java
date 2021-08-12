@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/6 21:08
  */
 public class NoErrorTemplate {

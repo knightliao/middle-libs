@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 09:33
  */
 public interface IMyRedisBatchService {

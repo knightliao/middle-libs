@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/11 17:13
  */
 @Slf4j

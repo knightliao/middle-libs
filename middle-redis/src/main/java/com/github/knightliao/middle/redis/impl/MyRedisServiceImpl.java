@@ -14,6 +14,7 @@ import redis.clients.jedis.JedisCluster;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/11 16:51
  */
 public class MyRedisServiceImpl implements IMyRedisService {

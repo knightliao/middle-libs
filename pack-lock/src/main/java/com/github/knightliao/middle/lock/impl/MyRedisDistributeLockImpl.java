@@ -14,6 +14,7 @@ import redis.clients.jedis.exceptions.JedisNoScriptException;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 14:51
  */
 public class MyRedisDistributeLockImpl implements IMyDistributeLock {

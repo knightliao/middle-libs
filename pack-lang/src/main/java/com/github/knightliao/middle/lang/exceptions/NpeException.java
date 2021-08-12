@@ -4,6 +4,7 @@ package com.github.knightliao.middle.lang.exceptions;
  * 断言
  *
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/4 15:29
  */
 public class NpeException extends RuntimeException {

@@ -6,6 +6,7 @@ import com.github.knightliao.middle.lang.exceptions.SocketRuntimeException;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/4 15:34
  */
 public interface IInvokeFuture {

@@ -12,6 +12,7 @@ import com.github.knightliao.middle.utils.trans.JsonUtils;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 14:38
  */
 public class IdemServiceImpl implements IIdemService {

@@ -2,6 +2,7 @@ package com.github.knightliao.middle.idem.support.key;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 14:43
  */
 public class IdemKeyUtils {

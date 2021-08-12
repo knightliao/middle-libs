@@ -6,6 +6,7 @@ import redis.clients.jedis.JedisCluster;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/11 17:26
  */
 public class RedisServerFactory {

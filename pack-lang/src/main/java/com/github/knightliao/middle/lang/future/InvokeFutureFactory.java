@@ -4,6 +4,7 @@ import com.github.knightliao.middle.lang.future.impl.InvokeFutureImpl;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/4 15:40
  */
 public class InvokeFutureFactory {

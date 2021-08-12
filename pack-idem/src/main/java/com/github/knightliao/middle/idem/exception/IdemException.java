@@ -4,6 +4,7 @@ import com.github.knightliao.middle.idem.support.enums.IdemErrorEnum;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 14:29
  */
 public class IdemException extends RuntimeException {

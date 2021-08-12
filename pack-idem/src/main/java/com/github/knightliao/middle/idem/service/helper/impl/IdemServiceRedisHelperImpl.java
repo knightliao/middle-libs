@@ -7,6 +7,7 @@ import com.github.knightliao.middle.redis.IMyRedisService;
 
 /**
  * @author knightliao
+ * @email knightliao@gmail.com
  * @date 2021/8/12 14:40
  */
 public class IdemServiceRedisHelperImpl implements IIdemServiceHelper {
