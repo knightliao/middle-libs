@@ -5,14 +5,13 @@
 
     <groupId>com.github.knightliao.middle</groupId>
     <artifactId>middle-libs</artifactId>
-    <version>0.0.8-SNAPSHOT</version>
+    <version>0.0.9-SNAPSHOT</version>
     <name>middle-libs</name>
     <packaging>pom</packaging>
 
     <properties>
 
         <!-- 模块版本号 -->
-        <bom.version>0.0.1-SNAPSHOT</bom.version>
 
         <!-- Spring項目配置 -->
         <encoding>UTF-8</encoding>
