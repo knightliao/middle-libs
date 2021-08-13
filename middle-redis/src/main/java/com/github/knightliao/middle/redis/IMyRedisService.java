@@ -32,4 +32,6 @@ public interface IMyRedisService {
     void hdel(String key, String... field);
 
     JedisCluster getJedisCluster();
+
+    Long incr(String key, int step, Integer expireSeconds);
 }

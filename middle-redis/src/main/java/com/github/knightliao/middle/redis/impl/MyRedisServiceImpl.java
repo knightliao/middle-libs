@@ -105,4 +105,15 @@ public class MyRedisServiceImpl implements IMyRedisService {
     public void hdel(String key, String... field) {
         this.jedisCluster.hdel(key, field);
     }
+
+    @Override
+    public Long incr(String key, int step, Integer expireSeconds) {
+
+        Long count = jedisCluster.incrBy(key, step);
+        if (expireSeconds != null) {
+            jedisCluster.expire(key, expireSeconds);
+        }
+
+        return count;
+    }
 }

@@ -51,6 +51,7 @@
         <module>pack-utils</module>
         <module>middle-redis</module>
         <module>pack-idem</module>
+        <module>pack-idgen</module>
         <module>pack-lock</module>
     </modules>
 
