@@ -13,6 +13,7 @@ some sdks or tools for developing. 一些开发合集
 - pack-lang: 基础类及领域相关
 - pack-lock: 锁相关包，包括分布式锁
 - pack-log: 日志封装包
+- pack-metrics: 度量统计
 - pack-threadcontext: 线程上下文相关包
 - pack-utils: 常见工具类包
 
