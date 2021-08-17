@@ -5,28 +5,28 @@
     <parent>
         <groupId>com.github.knightliao.middle</groupId>
         <artifactId>pack-bom</artifactId>
-        <version>0.0.9-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.knightliao.middle.bom</groupId>
     <artifactId>all-bom</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.9-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
 
     <dependencies>
 
         <dependency>
             <groupId>com.github.knightliao.middle.bom</groupId>
             <artifactId>test-bom</artifactId>
-            <version>0.0.9-SNAPSHOT</version>
+            <version>0.1.0-SNAPSHOT</version>
             <type>pom</type>
         </dependency>
 
         <dependency>
             <groupId>com.github.knightliao.middle.bom</groupId>
             <artifactId>logback-bom</artifactId>
-            <version>0.0.9-SNAPSHOT</version>
+            <version>0.1.0-SNAPSHOT</version>
             <type>pom</type>
         </dependency>
 
