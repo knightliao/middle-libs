@@ -18,19 +18,19 @@
         <dependency>
             <groupId>com.alibaba.middleware</groupId>
             <artifactId>metrics-core-api</artifactId>
-            <version>2.0.6</version>
+            <version>2.0.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba.middleware</groupId>
             <artifactId>metrics-core-impl</artifactId>
-            <version>2.0.6</version>
+            <version>2.0.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba.middleware</groupId>
             <artifactId>metrics-reporter</artifactId>
-            <version>2.0.6</version>
+            <version>2.0.1</version>
         </dependency>
 
     </dependencies>
