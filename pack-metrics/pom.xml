@@ -31,12 +31,6 @@
             <version>${metrics.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba.middleware</groupId>
-            <artifactId>metrics-reporter</artifactId>
-            <version>${metrics.version}</version>
-        </dependency>
-
     </dependencies>
 
 </project>
