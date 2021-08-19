@@ -16,9 +16,9 @@ public class NoErrorTemplate {
 
     }
 
-    public static void handle(Runnable callbakc) {
+    public static void handle(Runnable callback) {
         try {
-            callbakc.run();
+            callback.run();
         } catch (Throwable throwable) {
             log.error("处理回调失败", throwable);
         }
