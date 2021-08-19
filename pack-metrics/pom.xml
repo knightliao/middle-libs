@@ -5,13 +5,13 @@
     <parent>
         <groupId>com.github.knightliao.middle</groupId>
         <artifactId>middle-libs</artifactId>
-        <version>0.1.1-SNAPSHOT</version>
+        <version>0.1.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pack-metrics</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.3-SNAPSHOT</version>
 
     <properties>
         <metrics.version>2.0.1</metrics.version>

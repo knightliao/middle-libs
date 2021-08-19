@@ -5,6 +5,7 @@ import java.text.MessageFormat;
 import org.slf4j.Logger;
 
 import com.github.knightliao.middle.lang.templates.NoErrorTemplate;
+import com.github.knightliao.middle.thread.MyThreadContext;
 
 /**
  * @author knightliao
@@ -25,11 +26,19 @@ public class LoggerUtil {
     public static void info(Logger logger, String template, Object... parameters) {
 
         if (logger.isInfoEnabled()) {
-            if (parameters != null && parameters.length != 0) {
-                NoErrorTemplate.handle(() -> {
-                    logger.info(render(template, parameters));
-                });
-            }
+            NoErrorTemplate.handle(() -> {
+                logger.info(render(template, parameters));
+            });
+        }
+    }
+
+    // 精细化打日志
+    public static void infoIfNeed(Logger logger, String template, Object... parameters) {
+
+        if (logger.isInfoEnabled() && MyThreadContext.isPrintLog()) {
+            NoErrorTemplate.handle(() -> {
+                logger.info(render(template, parameters));
+            });
         }
     }
 

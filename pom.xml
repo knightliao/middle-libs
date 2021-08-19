@@ -5,7 +5,7 @@
 
     <groupId>com.github.knightliao.middle</groupId>
     <artifactId>middle-libs</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.3-SNAPSHOT</version>
     <name>middle-libs</name>
     <packaging>pom</packaging>
 
@@ -83,6 +83,12 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${jedis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
             </dependency>
 
             <dependency>
