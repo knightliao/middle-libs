@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.redis.aop;
+package com.github.knightliao.middle.idgen.aop;
 
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -21,9 +21,9 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Aspect
-public class RedisAop {
+public class IdGenAop {
 
-    private static final Logger logger = LoggerFactory.getLogger("MIDDLE_REDIS_LOG");
+    private static final Logger logger = LoggerFactory.getLogger("MIDDLE_IDGEN_LOG");
 
     @Setter
     private boolean debug = false;
@@ -31,43 +31,29 @@ public class RedisAop {
     @Setter
     private boolean metricStatistic = false;
 
-    public RedisAop() {
+    public IdGenAop() {
     }
 
-    @Pointcut("execution(public * com.github.knightliao.middle.redis.IMyRedisService.*(..)) "
-            + "|| execution(public * com.github.knightliao.middle.redis.IMyRedisBatchService.*(..))")
-    public void myRedisServicePoint() {
+    @Pointcut("execution(public * com.github.knightliao.middle.idgen.IIdgenService.*(..)) ")
+    public void iidgenServicePoint() {
 
     }
 
-    @Around("myRedisServicePoint()")
+    @Around("iidgenServicePoint()")
     public Object logExecuteJob(ProceedingJoinPoint joinPoint) throws Throwable {
 
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
         String key = "";
-        String key2 = "";
+        Object ret = "";
         boolean success = true;
 
         try {
 
             //
-            Object object = joinPoint.getTarget();
-
-            //
-            if (debug) {
-                Object[] args = joinPoint.getArgs();
-                if (args.length >= 1 && args[0] instanceof String) {
-                    key = (String) args[0];
-                }
-
-                if (args.length >= 2 && args[1] instanceof String) {
-                    key2 = (String) args[1];
-                }
-            }
-
-            return joinPoint.proceed();
+            ret = joinPoint.proceed();
+            return ret;
 
         } catch (Throwable ex) {
 
@@ -78,7 +64,7 @@ public class RedisAop {
 
             if (debug) {
                 try {
-                    doLog(joinPoint, key, key2, stopWatch, success);
+                    doLog(joinPoint, key, ret, stopWatch, success);
                 } catch (Exception ex) {
                     log.error(ex.toString(), ex);
                 }
@@ -86,22 +72,23 @@ public class RedisAop {
         }
     }
 
-    protected void doLog(final ProceedingJoinPoint joinPoint, final String key, final String key2,
+    protected void doLog(final ProceedingJoinPoint joinPoint, final String key, Object ret,
                          final StopWatch stopWatch, final boolean success) {
 
         String methodName = joinPoint.getSignature().getName();
         stopWatch.stop();
+        String result = String.valueOf(ret);
 
         if (debug) {
             LoggerUtil.info(logger, "* [{0}] {1} {2} {3} {4}",
-                    methodName, key, key2, stopWatch.getTime(), success);
+                    methodName, key, result, stopWatch.getTime(), success);
         } else {
             LoggerUtil.infoIfNeed(logger, "* [{0}] {1} {2} {3} {4}",
-                    methodName, key, key2, stopWatch.getTime(), success);
+                    methodName, key, result, stopWatch.getTime(), success);
         }
 
         if (this.metricStatistic) {
-            MonitorHelper.fastCompassOneKey("MIDDLE_REDIS", methodName, 1, stopWatch.getTime(), success);
+            MonitorHelper.fastCompassOneKey("MIDDLE_IDGEN", methodName, 1, stopWatch.getTime(), success);
         }
     }
 }
