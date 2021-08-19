@@ -35,6 +35,7 @@
         <aspectj.version>1.8.9</aspectj.version>
         <commons.lang3.version>3.5</commons.lang3.version>
         <lombok.version>1.16.20</lombok.version>
+        <guava.version>19.0</guava.version>
 
         <!-- test -->
         <slf4j.version>1.7.25</slf4j.version>
@@ -95,6 +96,12 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
             <dependency>
