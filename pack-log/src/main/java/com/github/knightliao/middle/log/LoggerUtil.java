@@ -32,6 +32,15 @@ public class LoggerUtil {
         }
     }
 
+    public static void warn(Logger logger, String template, Object... parameters) {
+
+        if (logger.isInfoEnabled()) {
+            NoErrorTemplate.handle(() -> {
+                logger.warn(render(template, parameters));
+            });
+        }
+    }
+
     // 精细化打日志
     public static void infoIfNeed(Logger logger, String template, Object... parameters) {
 

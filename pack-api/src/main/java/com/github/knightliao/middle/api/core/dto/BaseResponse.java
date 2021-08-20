@@ -1,13 +1,12 @@
-package com.github.knightliao.middle.api.web.dto;
+package com.github.knightliao.middle.api.core.dto;
 
-import lombok.Data;
+import lombok.Getter;
 
 /**
  * @author knightliao
  * @email knightliao@gmail.com
- * @date 2021/8/20 00:46
+ * @date 2021/8/20 13:37
  */
-@Data
 public class BaseResponse<T> {
 
     public static final int PARAM_ERROR = 400;
@@ -17,6 +16,7 @@ public class BaseResponse<T> {
 
     private T data;
     private String message;
+    @Getter
     private int status = STATUS_OK;
 
     private BaseResponse(T data) {

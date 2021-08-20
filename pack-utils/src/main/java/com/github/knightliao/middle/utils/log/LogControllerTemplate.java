@@ -29,4 +29,8 @@ public class LogControllerTemplate {
             log.error("处理回调失败", throwable);
         }
     }
+
+    public static void doFewLog(Runnable callback) {
+        doFewLog(200, callback);
+    }
 }

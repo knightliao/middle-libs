@@ -1,11 +1,16 @@
 package com.github.knightliao.middle.api.web.dto;
 
+import com.github.knightliao.middle.api.core.dto.BaseRequest;
+
+import lombok.Data;
+
 /**
  * @author knightliao
  * @email knightliao@gmail.com
  * @date 2021/8/20 00:46
  */
-public class BaseRequest {
+@Data
+public class BaseWebRequest extends BaseRequest {
 
     private Long uid;
 

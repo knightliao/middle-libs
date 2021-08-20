@@ -5,19 +5,48 @@
     <parent>
         <groupId>com.github.knightliao.middle</groupId>
         <artifactId>middle-libs</artifactId>
-        <version>0.1.5-SNAPSHOT</version>
+        <version>0.1.6-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pack-api</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.5-SNAPSHOT</version>
+    <version>0.1.6-SNAPSHOT</version>
 
     <dependencies>
 
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.knightliao.middle</groupId>
+            <artifactId>pack-lang</artifactId>
+            <version>0.1.6-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.knightliao.middle</groupId>
+            <artifactId>pack-log</artifactId>
+            <version>0.1.6-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.knightliao.middle</groupId>
+            <artifactId>pack-utils</artifactId>
+            <version>0.1.6-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.knightliao.middle</groupId>
+            <artifactId>pack-metrics</artifactId>
+            <version>0.1.6-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
