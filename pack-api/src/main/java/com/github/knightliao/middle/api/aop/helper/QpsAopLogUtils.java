@@ -91,7 +91,7 @@ public class QpsAopLogUtils {
 
     private static String getParam(final ProceedingJoinPoint joinPoint, QpsAnnotation qpsAnnotation) {
 
-        if (!qpsAnnotation.printParam()) {
+        if (qpsAnnotation == null || !qpsAnnotation.printParam()) {
             return "";
         }
 

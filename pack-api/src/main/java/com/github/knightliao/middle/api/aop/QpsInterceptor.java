@@ -48,6 +48,9 @@ public class QpsInterceptor {
 
             MethodSignature signature = (MethodSignature) joinPoint.getSignature();
             qpsAnnotation = signature.getMethod().getAnnotation(QpsAnnotation.class);
+            if (qpsAnnotation == null) {
+                return joinPoint.proceed();
+            }
 
             //
             ret = joinPoint.proceed();
@@ -62,14 +65,16 @@ public class QpsInterceptor {
 
         } finally {
 
-            try {
-                boolean isAsync = doAsyncLogIfExist(ret, joinPoint, stopWatch, qpsAnnotation);
-                if (!isAsync) {
-                    QpsAopLogUtils.doLog(logger, "", joinPoint, qpsAnnotation, stopWatch, isSuccess, true,
-                            statusCode);
+            if (qpsAnnotation != null) {
+                try {
+                    boolean isAsync = doAsyncLogIfExist(ret, joinPoint, stopWatch, qpsAnnotation);
+                    if (!isAsync) {
+                        QpsAopLogUtils.doLog(logger, "", joinPoint, qpsAnnotation, stopWatch, isSuccess, true,
+                                statusCode);
+                    }
+                } catch (Exception e) {
+                    log.error(e.toString(), e);
                 }
-            } catch (Exception e) {
-                log.error(e.toString(), e);
             }
         }
     }
