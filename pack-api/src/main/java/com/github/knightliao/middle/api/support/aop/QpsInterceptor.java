@@ -11,8 +11,9 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.knightliao.middle.api.support.aop.helper.QpsAopLogUtils;
 import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
+import com.github.knightliao.middle.api.support.aop.helper.QpsAopLogUtils;
+import com.github.knightliao.middle.lang.callback.IMyMethodCallback;
 import com.github.knightliao.middle.lang.constants.PackConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +30,12 @@ public class QpsInterceptor {
     private static final String LOGGER_NAME_REQUEST_LOG = "RL";
 
     private static final Logger logger = LoggerFactory.getLogger(LOGGER_NAME_REQUEST_LOG);
+
+    private IMyMethodCallback<ProceedingJoinPoint> callback = null;
+
+    public QpsInterceptor(IMyMethodCallback<ProceedingJoinPoint> callback) {
+        this.callback = callback;
+    }
 
     @Pointcut("@annotation(com.github.knightliao.middle.api.support.aop.QpsAnnotation)")
     public void around() {
@@ -52,9 +59,19 @@ public class QpsInterceptor {
                 return joinPoint.proceed();
             }
 
+            // pre
+            if (callback != null) {
+                callback.preDo(joinPoint);
+            }
+
             //
             ret = joinPoint.proceed();
             statusCode = getStatusCode(ret);
+
+            // after
+            if (callback != null) {
+                callback.afterDo(joinPoint);
+            }
 
             return ret;
 

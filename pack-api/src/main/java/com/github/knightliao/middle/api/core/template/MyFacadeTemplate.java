@@ -1,6 +1,6 @@
 package com.github.knightliao.middle.api.core.template;
 
-import com.github.knightliao.middle.api.core.callback.MyCallback;
+import com.github.knightliao.middle.api.core.callback.IMyRequesCallback;
 import com.github.knightliao.middle.api.core.dto.MyBaseRequest;
 import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
 import com.github.knightliao.middle.lang.constants.PackConstants;
@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MyFacadeTemplate {
 
-    public static <T> MyBaseResponse<T> execute(MyBaseRequest request, MyCallback<T> callback) {
+    public static <T> MyBaseResponse<T> execute(MyBaseRequest request, IMyRequesCallback<T> callback) {
 
         try {
 

@@ -8,7 +8,7 @@ import com.github.knightliao.middle.lang.exceptions.BizException;
  * @email knightliao@gmail.com
  * @date 2021/8/20 12:26
  */
-public interface MyCallback<T> {
+public interface IMyRequesCallback<T> {
 
     void checkParams() throws BizException;
 
