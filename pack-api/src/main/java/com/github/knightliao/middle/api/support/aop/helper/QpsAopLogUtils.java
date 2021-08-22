@@ -3,12 +3,13 @@ package com.github.knightliao.middle.api.support.aop.helper;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.slf4j.Logger;
 
-import com.github.knightliao.middle.api.support.aop.QpsAnnotation;
 import com.github.knightliao.middle.api.core.dto.MyBaseRequest;
+import com.github.knightliao.middle.api.support.aop.QpsAnnotation;
 import com.github.knightliao.middle.log.LoggerUtil;
 import com.github.knightliao.middle.metrics.MonitorHelper;
 import com.github.knightliao.middle.utils.log.LogControllerTemplate;
@@ -66,9 +67,10 @@ public class QpsAopLogUtils {
         // format if need
         String format = "";
         boolean doFormatLog = true;
-        if (qpsAnnotation.logIfLongTime() > 0 && costTime > qpsAnnotation.logIfLongTime()) {
-        } else {
-            doFormatLog = false;
+        if (qpsAnnotation.logIfLongTime() > 0) {
+            if (costTime < qpsAnnotation.logIfLongTime()) {
+                doFormatLog = false;
+            }
         }
 
         if (doFormatLog) {
@@ -81,10 +83,12 @@ public class QpsAopLogUtils {
         }
 
         //
-        if (qpsAnnotation.logIfNeed()) {
-            LoggerUtil.infoIfNeed(logger, format);
-        } else {
-            LoggerUtil.info(logger, format);
+        if (StringUtils.isNoneEmpty(format)) {
+            if (qpsAnnotation.logIfNeed()) {
+                LoggerUtil.infoIfNeed(logger, format);
+            } else {
+                LoggerUtil.info(logger, format);
+            }
         }
 
     }

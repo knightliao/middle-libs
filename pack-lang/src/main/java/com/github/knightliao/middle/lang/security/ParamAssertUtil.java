@@ -1,7 +1,6 @@
 package com.github.knightliao.middle.lang.security;
 
-import com.github.knightliao.middle.lang.exceptions.AssertException;
-import com.github.knightliao.middle.lang.exceptions.NpeException;
+import com.github.knightliao.middle.lang.exceptions.BizException;
 
 /**
  * @author knightliao
@@ -13,13 +12,13 @@ public class ParamAssertUtil {
     public static void assertArgumentValid(boolean condition, String message) {
 
         if (!condition) {
-            throw new AssertException(message);
+            throw BizException.getParamError(message, null);
         }
     }
 
     public static void assertArgumentNotNull(Object object, String field) {
         if (object == null) {
-            throw new NpeException(field);
+            throw BizException.getParamError(field, null);
         }
     }
 }

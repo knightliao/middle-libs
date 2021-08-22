@@ -1,6 +1,7 @@
 package com.github.knightliao.middle.api.core.callback;
 
 import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
+import com.github.knightliao.middle.lang.exceptions.BizException;
 
 /**
  * @author knightliao
@@ -9,7 +10,7 @@ import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
  */
 public interface MyCallback<T> {
 
-    void checkParams();
+    void checkParams() throws BizException;
 
     MyBaseResponse<T> process();
 }
