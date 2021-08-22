@@ -27,12 +27,13 @@ public class MyFacadeTemplate {
 
         } catch (BizException bizException) {
 
-            LoggerUtil.warn(log, "业务异常. request: %d %s", getBizErrorCode(bizException), request.toString());
+            LoggerUtil.warn(log, "业务异常. request: {0} {1}",
+                    getBizErrorCode(bizException), request.toString());
             return MyBaseResponse.failWithParm(bizException.getMessage());
 
         } catch (Throwable throwable) {
 
-            LoggerUtil.error(log, "系统异常. request: %d",
+            LoggerUtil.error(log, "系统异常. request: {0} {1}",
                     PackConstants.DEFAULT_ERROR_VALUE_INT, request.toString());
             return MyBaseResponse.failWithParm(throwable.toString());
         }

@@ -14,7 +14,9 @@ public class MyBaseResponse<T> {
     public static final String SYS_ERROR_STRING = "system error";
     public static final int STATUS_OK = 1;
 
+    @Getter
     private T data;
+    @Getter
     private String message;
     @Getter
     private int status = STATUS_OK;
