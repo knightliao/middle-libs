@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.api.api.annotations;
+package com.github.knightliao.middle.api.rpc.annotations;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

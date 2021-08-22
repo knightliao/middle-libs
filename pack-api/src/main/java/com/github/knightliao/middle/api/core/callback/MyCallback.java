@@ -1,6 +1,6 @@
 package com.github.knightliao.middle.api.core.callback;
 
-import com.github.knightliao.middle.api.core.dto.BaseResponse;
+import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
 
 /**
  * @author knightliao
@@ -11,5 +11,5 @@ public interface MyCallback<T> {
 
     void checkParams();
 
-    BaseResponse<T> process();
+    MyBaseResponse<T> process();
 }

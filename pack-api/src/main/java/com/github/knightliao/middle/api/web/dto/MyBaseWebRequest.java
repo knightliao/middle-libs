@@ -1,6 +1,6 @@
 package com.github.knightliao.middle.api.web.dto;
 
-import com.github.knightliao.middle.api.core.dto.BaseRequest;
+import com.github.knightliao.middle.api.core.dto.MyBaseRequest;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import lombok.Data;
  * @date 2021/8/20 00:46
  */
 @Data
-public class BaseWebRequest extends BaseRequest {
+public class MyBaseWebRequest extends MyBaseRequest {
 
     private Long uid;
 

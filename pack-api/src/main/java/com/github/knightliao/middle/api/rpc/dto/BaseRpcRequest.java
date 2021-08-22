@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.api.api.dto;
+package com.github.knightliao.middle.api.rpc.dto;
 
 import lombok.Data;
 

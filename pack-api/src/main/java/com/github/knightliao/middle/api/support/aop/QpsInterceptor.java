@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.api.aop;
+package com.github.knightliao.middle.api.support.aop;
 
 import java.util.concurrent.CompletionStage;
 
@@ -11,8 +11,8 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.knightliao.middle.api.aop.helper.QpsAopLogUtils;
-import com.github.knightliao.middle.api.core.dto.BaseResponse;
+import com.github.knightliao.middle.api.support.aop.helper.QpsAopLogUtils;
+import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
 import com.github.knightliao.middle.lang.constants.PackConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +30,7 @@ public class QpsInterceptor {
 
     private static final Logger logger = LoggerFactory.getLogger(LOGGER_NAME_REQUEST_LOG);
 
-    @Pointcut("@annotation(com.github.knightliao.middle.api.aop.QpsAnnotation)")
+    @Pointcut("@annotation(com.github.knightliao.middle.api.support.aop.QpsAnnotation)")
     public void around() {
     }
 
@@ -81,9 +81,9 @@ public class QpsInterceptor {
 
     private int getStatusCode(Object result) {
 
-        if (result instanceof BaseResponse) {
-            BaseResponse baseResponse = (BaseResponse) result;
-            return baseResponse.getStatus();
+        if (result instanceof MyBaseResponse) {
+            MyBaseResponse myBaseResponse = (MyBaseResponse) result;
+            return myBaseResponse.getStatus();
         }
 
         return PackConstants.DEFAULT_ERROR_VALUE_INT;

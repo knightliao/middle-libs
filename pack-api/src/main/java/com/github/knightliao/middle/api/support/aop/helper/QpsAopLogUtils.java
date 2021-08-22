@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.api.aop.helper;
+package com.github.knightliao.middle.api.support.aop.helper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.slf4j.Logger;
 
-import com.github.knightliao.middle.api.aop.QpsAnnotation;
-import com.github.knightliao.middle.api.core.dto.BaseRequest;
+import com.github.knightliao.middle.api.support.aop.QpsAnnotation;
+import com.github.knightliao.middle.api.core.dto.MyBaseRequest;
 import com.github.knightliao.middle.log.LoggerUtil;
 import com.github.knightliao.middle.metrics.MonitorHelper;
 import com.github.knightliao.middle.utils.log.LogControllerTemplate;
@@ -102,7 +102,7 @@ public class QpsAopLogUtils {
 
             if (sig != null) {
 
-                if (sig instanceof BaseRequest) {
+                if (sig instanceof MyBaseRequest) {
                     paramList.add(sig.toString());
                 }
             }

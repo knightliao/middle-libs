@@ -5,5 +5,5 @@ package com.github.knightliao.middle.api.core.dto;
  * @email knightliao@gmail.com
  * @date 2021/8/20 13:37
  */
-public class BaseRequest {
+public class MyBaseRequest {
 }

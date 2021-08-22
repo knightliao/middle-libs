@@ -1,8 +1,8 @@
 package com.github.knightliao.middle.api.core.template;
 
 import com.github.knightliao.middle.api.core.callback.MyCallback;
-import com.github.knightliao.middle.api.core.dto.BaseRequest;
-import com.github.knightliao.middle.api.core.dto.BaseResponse;
+import com.github.knightliao.middle.api.core.dto.MyBaseRequest;
+import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
 import com.github.knightliao.middle.lang.constants.PackConstants;
 import com.github.knightliao.middle.lang.exceptions.BizException;
 import com.github.knightliao.middle.log.LoggerUtil;
@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MyFacadeTemplate {
 
-    public static <T> BaseResponse<T> execute(BaseRequest request, MyCallback<T> callback) {
+    public static <T> MyBaseResponse<T> execute(MyBaseRequest request, MyCallback<T> callback) {
 
         try {
 
@@ -28,13 +28,13 @@ public class MyFacadeTemplate {
         } catch (BizException bizException) {
 
             LoggerUtil.warn(log, "业务异常. request: %d %s", getBizErrorCode(bizException), request.toString());
-            return BaseResponse.failWithParm(bizException.getMessage());
+            return MyBaseResponse.failWithParm(bizException.getMessage());
 
         } catch (Throwable throwable) {
 
             LoggerUtil.error(log, "系统异常. request: %d",
                     PackConstants.DEFAULT_ERROR_VALUE_INT, request.toString());
-            return BaseResponse.failWithParm(throwable.toString());
+            return MyBaseResponse.failWithParm(throwable.toString());
         }
     }
 
