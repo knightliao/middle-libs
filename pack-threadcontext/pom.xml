@@ -5,13 +5,13 @@
     <parent>
         <groupId>com.github.knightliao.middle</groupId>
         <artifactId>middle-libs</artifactId>
-        <version>0.1.7-SNAPSHOT</version>
+        <version>0.1.8-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pack-threadcontext</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.7-SNAPSHOT</version>
+    <version>0.1.8-SNAPSHOT</version>
 
     <dependencies>
 
