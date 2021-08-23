@@ -5,13 +5,13 @@
     <parent>
         <groupId>com.github.knightliao.middle</groupId>
         <artifactId>middle-libs</artifactId>
-        <version>0.1.9-SNAPSHOT</version>
+        <version>0.1.10-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pack-http</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.9-SNAPSHOT</version>
+    <version>0.1.10-SNAPSHOT</version>
 
     <dependencies>
 
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.github.knightliao.middle.bom</groupId>
             <artifactId>test-bom</artifactId>
-            <version>0.1.9-SNAPSHOT</version>
+            <version>0.1.10-SNAPSHOT</version>
             <type>pom</type>
             <scope>test</scope>
         </dependency>

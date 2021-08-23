@@ -5,7 +5,7 @@
 
     <groupId>com.github.knightliao.middle</groupId>
     <artifactId>middle-libs</artifactId>
-    <version>0.1.9-SNAPSHOT</version>
+    <version>0.1.10-SNAPSHOT</version>
     <name>middle-libs</name>
     <packaging>pom</packaging>
 
