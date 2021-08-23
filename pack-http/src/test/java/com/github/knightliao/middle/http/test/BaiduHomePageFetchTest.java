@@ -3,7 +3,7 @@ package com.github.knightliao.middle.http.test;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.github.knightliao.middle.http.SimpleHttpSupport;
+import com.github.knightliao.middle.http.sync.client.SimpleHttpSupport;
 
 /**
  * @author knightliao
