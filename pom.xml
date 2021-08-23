@@ -55,6 +55,7 @@
         <module>pack-idgen</module>
         <module>pack-lock</module>
         <module>pack-api</module>
+        <module>pack-http</module>
     </modules>
 
     <dependencies>

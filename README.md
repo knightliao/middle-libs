@@ -7,7 +7,9 @@ some sdks or tools for developing. 一些开发合集
 [![Coverage Status](https://coveralls.io/repos/github/knightliao/middle-libs/badge.svg?branch=main)](https://coveralls.io/github/knightliao/middle-libs?branch=main)
 
 - middle-redis: redis的封装包
+- pack-api: api相关类封装
 - pack-bom: 基础软件必使用包，包括 logback, 单元测试test 等
+- pack-http: 简单的http请求client
 - pack-idem: 分布式幂等控制包
 - pack-idgen: Id生成器
 - pack-lang: 基础类及领域相关
