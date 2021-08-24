@@ -26,6 +26,15 @@
             <artifactId>pack-threadcontext</artifactId>
             <version>0.1.10-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.github.knightliao.middle.bom</groupId>
+            <artifactId>test-bom</artifactId>
+            <version>0.1.10-SNAPSHOT</version>
+            <scope>test</scope>
+            <type>pom</type>
+        </dependency>
+
     </dependencies>
 
 </project>
