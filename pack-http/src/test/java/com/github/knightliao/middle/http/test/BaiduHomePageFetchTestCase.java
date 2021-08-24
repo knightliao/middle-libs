@@ -10,7 +10,7 @@ import com.github.knightliao.middle.http.sync.client.SimpleHttpSupport;
  * @email knightliao@gmail.com
  * @date 2021/8/23 14:39
  */
-public class BaiduHomePageFetchTest {
+public class BaiduHomePageFetchTestCase {
 
     public static class BaiduHomePageFetcher extends SimpleHttpSupport {
 
