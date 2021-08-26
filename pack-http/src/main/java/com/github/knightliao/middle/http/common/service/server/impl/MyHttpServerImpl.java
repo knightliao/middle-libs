@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.http.sync.client.service.server.impl;
+package com.github.knightliao.middle.http.common.service.server.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -8,14 +8,14 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.github.knightliao.middle.http.sync.client.service.loadbalance.ILoadBalancer;
-import com.github.knightliao.middle.http.sync.client.service.loadbalance.impl.RandomLoadBalancerImpl;
-import com.github.knightliao.middle.http.sync.client.service.server.IMyHttpServer;
-import com.github.knightliao.middle.http.sync.client.service.server.helper.server.ServerInstance;
-import com.github.knightliao.middle.http.sync.client.service.server.helper.server.ServerStatus;
-import com.github.knightliao.middle.http.sync.client.service.server.helper.server.ServerStatusFactory;
-import com.github.knightliao.middle.http.sync.client.service.server.helper.serverlist.IServerInstanceList;
-import com.github.knightliao.middle.http.sync.client.constants.HttpConstants;
+import com.github.knightliao.middle.http.common.service.loadbalance.ILoadBalancer;
+import com.github.knightliao.middle.http.common.service.loadbalance.impl.RandomLoadBalancerImpl;
+import com.github.knightliao.middle.http.common.service.server.IMyHttpServer;
+import com.github.knightliao.middle.http.common.service.server.helper.server.ServerInstance;
+import com.github.knightliao.middle.http.common.service.server.helper.server.ServerStatus;
+import com.github.knightliao.middle.http.common.service.server.helper.server.ServerStatusFactory;
+import com.github.knightliao.middle.http.common.service.server.helper.serverlist.IServerInstanceList;
+import com.github.knightliao.middle.http.common.constants.HttpConstants;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

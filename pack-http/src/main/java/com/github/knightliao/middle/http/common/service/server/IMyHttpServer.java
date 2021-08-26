@@ -1,8 +1,8 @@
-package com.github.knightliao.middle.http.sync.client.service.server;
+package com.github.knightliao.middle.http.common.service.server;
 
 import java.util.List;
 
-import com.github.knightliao.middle.http.sync.client.service.server.helper.server.ServerStatus;
+import com.github.knightliao.middle.http.common.service.server.helper.server.ServerStatus;
 
 /**
  * @author knightliao

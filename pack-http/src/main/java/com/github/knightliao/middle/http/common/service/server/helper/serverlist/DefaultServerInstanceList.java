@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.http.sync.client.service.server.helper.serverlist;
+package com.github.knightliao.middle.http.common.service.server.helper.serverlist;
 
 import static java.util.Arrays.stream;
 
@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.github.knightliao.middle.http.sync.client.service.server.helper.server.ServerInstance;
+import com.github.knightliao.middle.http.common.service.server.helper.server.ServerInstance;
 
 /**
  * @author knightliao

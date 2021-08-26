@@ -1,12 +1,12 @@
 package com.github.knightliao.middle.http.sync.client;
 
 import com.github.knightliao.middle.http.sync.client.impl.SimpleHttpClientDefaultImpl;
-import com.github.knightliao.middle.http.sync.client.service.loadbalance.ILoadBalancer;
-import com.github.knightliao.middle.http.sync.client.service.loadbalance.impl.RoundRobinLoadBalancerImpl;
-import com.github.knightliao.middle.http.sync.client.service.server.IMyHttpServer;
-import com.github.knightliao.middle.http.sync.client.service.server.helper.serverlist.DefaultServerInstanceList;
-import com.github.knightliao.middle.http.sync.client.service.server.helper.serverlist.IServerInstanceList;
-import com.github.knightliao.middle.http.sync.client.service.server.impl.MyHttpServerImpl;
+import com.github.knightliao.middle.http.common.service.loadbalance.ILoadBalancer;
+import com.github.knightliao.middle.http.common.service.loadbalance.impl.RoundRobinLoadBalancerImpl;
+import com.github.knightliao.middle.http.common.service.server.IMyHttpServer;
+import com.github.knightliao.middle.http.common.service.server.helper.serverlist.DefaultServerInstanceList;
+import com.github.knightliao.middle.http.common.service.server.helper.serverlist.IServerInstanceList;
+import com.github.knightliao.middle.http.common.service.server.impl.MyHttpServerImpl;
 
 /**
  * @author knightliao

@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.http.test;
+package com.github.knightliao.middle.http.test.sync;
 
 import org.junit.Assert;
 import org.junit.Test;

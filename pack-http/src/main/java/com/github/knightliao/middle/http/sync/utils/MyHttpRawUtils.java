@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -22,7 +21,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MyHttpRawUtils {
 
+    // 每个连接最多的并发
     private static final int MAX_PRE_ROUTE = 20;
+    // 全局最多的并发
     private static final int MAX_TOTAL_ROUTE = 100;
 
     static {
@@ -33,20 +34,6 @@ public class MyHttpRawUtils {
         builder.setConnectionManager(connectionManager);
 
         MyHttpRawUtilsHelper.closeableHttpClient = builder.build();
-
-        String value = System.getProperty("http.request.time.out");
-        if (!StringUtils.isEmpty(value)) {
-            int timeout = 0;
-            try {
-                timeout = Integer.valueOf(value);
-            } catch (Exception ex) {
-
-            }
-
-            if (timeout > 0) {
-                MyHttpRawUtilsHelper.REQUEST_TIMEOUT = timeout;
-            }
-        }
     }
 
     //

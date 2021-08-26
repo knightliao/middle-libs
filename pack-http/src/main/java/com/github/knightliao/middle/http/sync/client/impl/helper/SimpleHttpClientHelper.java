@@ -12,9 +12,9 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.util.EntityUtils;
 
-import com.github.knightliao.middle.http.sync.client.service.server.IMyHttpServer;
-import com.github.knightliao.middle.http.sync.client.service.server.helper.server.ServerStatus;
-import com.github.knightliao.middle.http.sync.client.exceptions.NoServerAvailableException;
+import com.github.knightliao.middle.http.common.service.server.IMyHttpServer;
+import com.github.knightliao.middle.http.common.service.server.helper.server.ServerStatus;
+import com.github.knightliao.middle.http.common.exceptions.NoServerAvailableException;
 
 import lombok.extern.slf4j.Slf4j;
 

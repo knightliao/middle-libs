@@ -19,6 +19,8 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 
+import com.github.knightliao.middle.http.common.utils.HttpParamUtils;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -30,9 +32,6 @@ import lombok.extern.slf4j.Slf4j;
 public class MyHttpRawUtilsHelper {
 
     protected static final String CHARSET = "UTF-8";
-    protected static final int CONNECTION_TIMEOUT = 200;
-    protected static final int SOCKET_TIMEOUT = 500;
-    protected static int REQUEST_TIMEOUT = 100;
 
     protected static CloseableHttpClient closeableHttpClient;
 
@@ -104,18 +103,18 @@ public class MyHttpRawUtilsHelper {
 
     private static void setTimeout(HttpRequestBase requestBase, int connectionTimeout, int readTimeout) {
         if (readTimeout <= 0) {
-            readTimeout = SOCKET_TIMEOUT;
+            readTimeout = HttpParamUtils.socketTimeout;
         }
 
         if (connectionTimeout <= 0) {
-            connectionTimeout = CONNECTION_TIMEOUT;
+            connectionTimeout = HttpParamUtils.connectionTimeout;
         }
 
         RequestConfig.Builder builder = RequestConfig.custom();
         builder.setSocketTimeout(readTimeout)
                 .setRedirectsEnabled(true)
                 .setConnectTimeout(connectionTimeout)
-                .setConnectionRequestTimeout(REQUEST_TIMEOUT);
+                .setConnectionRequestTimeout(HttpParamUtils.requestTimeout);
         requestBase.setConfig(builder.build());
     }
 }

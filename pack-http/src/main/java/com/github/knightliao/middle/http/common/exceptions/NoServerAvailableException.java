@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.http.sync.client.exceptions;
+package com.github.knightliao.middle.http.common.exceptions;
 
 /**
  * @author knightliao

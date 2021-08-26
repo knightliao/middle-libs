@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.http.sync.client.service.server.helper.server;
+package com.github.knightliao.middle.http.common.service.server.helper.server;
 
 import java.util.concurrent.TimeUnit;
 

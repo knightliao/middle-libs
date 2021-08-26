@@ -1,10 +1,10 @@
-package com.github.knightliao.middle.http.sync.client.service.server.helper.server;
+package com.github.knightliao.middle.http.common.service.server.helper.server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-import com.github.knightliao.middle.http.sync.client.constants.HttpConstants;
+import com.github.knightliao.middle.http.common.constants.HttpConstants;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.http.sync.client.constants;
+package com.github.knightliao.middle.http.common.constants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -5,10 +5,10 @@ import java.util.Map;
 
 import org.apache.http.NameValuePair;
 
+import com.github.knightliao.middle.http.common.service.server.IMyHttpServer;
 import com.github.knightliao.middle.http.sync.client.ISimpleHttpClient;
 import com.github.knightliao.middle.http.sync.client.impl.helper.IFunctionWrapper;
 import com.github.knightliao.middle.http.sync.client.impl.helper.SimpleHttpClientHelper;
-import com.github.knightliao.middle.http.sync.client.service.server.IMyHttpServer;
 import com.github.knightliao.middle.http.sync.utils.MyHttpRawUtils;
 
 ;

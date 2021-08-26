@@ -1,8 +1,8 @@
-package com.github.knightliao.middle.http.sync.client.service.loadbalance;
+package com.github.knightliao.middle.http.common.service.loadbalance;
 
 import java.util.List;
 
-import com.github.knightliao.middle.http.sync.client.service.server.helper.server.ServerStatus;
+import com.github.knightliao.middle.http.common.service.server.helper.server.ServerStatus;
 
 /**
  * @author knightliao

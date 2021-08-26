@@ -1,10 +1,10 @@
-package com.github.knightliao.middle.http.sync.client.service.loadbalance.impl;
+package com.github.knightliao.middle.http.common.service.loadbalance.impl;
 
 import java.util.List;
 import java.util.Random;
 
-import com.github.knightliao.middle.http.sync.client.service.loadbalance.ILoadBalancer;
-import com.github.knightliao.middle.http.sync.client.service.server.helper.server.ServerStatus;
+import com.github.knightliao.middle.http.common.service.loadbalance.ILoadBalancer;
+import com.github.knightliao.middle.http.common.service.server.helper.server.ServerStatus;
 
 /**
  * @author knightliao
