@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.api.support.aop;
+package com.github.knightliao.middle.web.aop;
 
 import java.util.concurrent.CompletionStage;
 
@@ -12,9 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
-import com.github.knightliao.middle.api.support.aop.helper.QpsAopLogUtils;
 import com.github.knightliao.middle.lang.callback.IMyMethodCallback;
 import com.github.knightliao.middle.lang.constants.PackConstants;
+import com.github.knightliao.middle.web.aop.helper.QpsAopLogUtils;
 
 import lombok.extern.slf4j.Slf4j;
 

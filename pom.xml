@@ -5,7 +5,7 @@
 
     <groupId>com.github.knightliao.middle</groupId>
     <artifactId>middle-libs</artifactId>
-    <version>0.1.11-SNAPSHOT</version>
+    <version>0.1.12-SNAPSHOT</version>
     <name>middle-libs</name>
     <packaging>pom</packaging>
 
@@ -56,6 +56,8 @@
         <module>pack-lock</module>
         <module>pack-api</module>
         <module>pack-http</module>
+        <module>pack-soa</module>
+        <module>pack-web</module>
     </modules>
 
     <dependencies>
