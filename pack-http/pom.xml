@@ -60,6 +60,18 @@
             <type>pom</type>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.knightliao.middle</groupId>
+            <artifactId>pack-utils</artifactId>
+            <version>0.1.10-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.knightliao.middle</groupId>
+            <artifactId>pack-metrics</artifactId>
+            <version>0.1.10-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

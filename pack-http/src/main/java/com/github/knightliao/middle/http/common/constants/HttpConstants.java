@@ -11,4 +11,6 @@ import org.slf4j.LoggerFactory;
 public class HttpConstants {
 
     public static final Logger logger = LoggerFactory.getLogger("SIMPLE_HTTP_CLIENT");
+
+    public static final String CHARSET = "UTF-8";
 }

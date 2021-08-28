@@ -19,7 +19,7 @@ public interface IInvokeFuture {
 
     void setResult(Object result);
 
-    Object getResult(long timeout, TimeUnit unit);
+    Object getResult(long timeoutMs, TimeUnit unit);
 
     void setCause(Throwable cause);
 

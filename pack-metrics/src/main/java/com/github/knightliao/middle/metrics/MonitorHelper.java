@@ -1,6 +1,7 @@
 package com.github.knightliao.middle.metrics;
 
 import com.alibaba.metrics.FastCompass;
+import com.alibaba.metrics.Meter;
 import com.alibaba.metrics.MetricLevel;
 import com.alibaba.metrics.MetricManager;
 import com.alibaba.metrics.MetricName;
@@ -50,6 +51,15 @@ public class MonitorHelper {
     private static String getSuccess(boolean isSuccess) {
 
         return isSuccess ? "success" : "error";
+    }
+
+    public static void doMeter(String prefix, boolean isSuccess, String node, String cost) {
+
+        Meter meter = MetricManager.getMeter(prefix, new MetricName("node-cost", MetricLevel.TRIVIAL)
+                .tagged("isSucc", isSuccess ? "true" : "false")
+                .tagged("node", node)
+                .tagged("cost", cost));
+        meter.mark();
     }
 
 }

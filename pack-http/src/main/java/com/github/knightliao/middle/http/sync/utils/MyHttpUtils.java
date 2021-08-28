@@ -12,6 +12,8 @@ import org.apache.http.StatusLine;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
 
+import com.github.knightliao.middle.http.sync.utils.helper.MyHttpRawUtils;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**

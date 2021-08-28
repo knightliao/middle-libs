@@ -9,7 +9,7 @@ import com.github.knightliao.middle.http.common.service.server.IMyHttpServer;
 import com.github.knightliao.middle.http.sync.client.ISimpleHttpClient;
 import com.github.knightliao.middle.http.sync.client.impl.helper.IFunctionWrapper;
 import com.github.knightliao.middle.http.sync.client.impl.helper.SimpleHttpClientHelper;
-import com.github.knightliao.middle.http.sync.utils.MyHttpRawUtils;
+import com.github.knightliao.middle.http.sync.utils.helper.MyHttpRawUtils;
 
 ;
 
@@ -60,8 +60,8 @@ public class SimpleHttpClientDefaultImpl implements ISimpleHttpClient {
     }
 
     @Override
-    public String post(String url, String content, int connectionTimeout, int readTimeout) {
-        IFunctionWrapper functionWrapper = (path -> MyHttpRawUtils.post(path, content, connectionTimeout, readTimeout));
+    public String post(String url, String content, int connectionTimeout, int readTimeoutMs) {
+        IFunctionWrapper functionWrapper = (path -> MyHttpRawUtils.post(path, content, connectionTimeout, readTimeoutMs));
 
         return SimpleHttpClientHelper.executeWithLoadBalancer(myHttpServer, url, functionWrapper, numRetries);
     }

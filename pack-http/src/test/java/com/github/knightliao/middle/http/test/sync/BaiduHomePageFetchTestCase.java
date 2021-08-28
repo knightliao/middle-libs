@@ -30,6 +30,7 @@ public class BaiduHomePageFetchTestCase {
     public void test() {
 
         BaiduHomePageFetcher baiduHomePageFetcher = new BaiduHomePageFetcher("www.baidu.com:80", 3);
+
         String content = baiduHomePageFetcher.getContent();
 
         Assert.assertNotEquals(content, "");

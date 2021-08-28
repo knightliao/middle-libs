@@ -14,7 +14,7 @@ import com.github.knightliao.middle.http.async.client.ISimpleAsyncHttpClient;
 public class SimpleAsyncHttpClientDefaultImpl implements ISimpleAsyncHttpClient {
 
     @Override
-    public CompletionStage<String> get(String url, int timeout) {
+    public CompletionStage<String> get(String url, int timeoutMs) {
         return null;
     }
 
@@ -24,13 +24,13 @@ public class SimpleAsyncHttpClientDefaultImpl implements ISimpleAsyncHttpClient 
     }
 
     @Override
-    public CompletableFuture<String> get(String url, Map<String, Object> params, int timeout) {
+    public CompletableFuture<String> get(String url, Map<String, Object> params, int timeoutMs) {
         return null;
     }
 
     @Override
     public CompletableFuture<String> get(String url, Map<String, Object> params, Map<String, String> headers,
-                                         int timeout) {
+                                         int timeoutMs) {
         return null;
     }
 
@@ -40,13 +40,13 @@ public class SimpleAsyncHttpClientDefaultImpl implements ISimpleAsyncHttpClient 
     }
 
     @Override
-    public CompletableFuture<String> post(String url, Map<String, Object> params, int timeout) {
+    public CompletableFuture<String> post(String url, Map<String, Object> params, int timeoutMs) {
         return null;
     }
 
     @Override
     public CompletableFuture<String> post(String url, Map<String, Object> params, String body,
-                                          Map<String, String> headers, int timeout) {
+                                          Map<String, String> headers, int timeoutMs) {
         return null;
     }
 

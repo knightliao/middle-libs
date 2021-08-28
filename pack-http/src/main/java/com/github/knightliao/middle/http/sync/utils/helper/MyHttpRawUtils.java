@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.http.sync.utils;
+package com.github.knightliao.middle.http.sync.utils.helper;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,8 +7,6 @@ import java.util.Map;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.message.BasicNameValuePair;
 
 import com.github.knightliao.middle.http.common.utils.HttpParamUtils;
@@ -28,21 +26,18 @@ public class MyHttpRawUtils {
     // 全局最多的并发
     private static final int MAX_TOTAL_ROUTE = HttpParamUtils.syncMaxConnTotal;
 
-    static {
-        HttpClientBuilder builder = HttpClientBuilder.create();
-        PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
-        connectionManager.setMaxTotal(MAX_TOTAL_ROUTE);
-        connectionManager.setDefaultMaxPerRoute(MAX_PRE_ROUTE);
-        builder.setConnectionManager(connectionManager);
+    private static MyHttpClient httpClient;
 
-        MyHttpRawUtilsHelper.closeableHttpClient = builder.build();
+    static {
+
+        httpClient = new MyHttpClient(MAX_TOTAL_ROUTE, MAX_PRE_ROUTE, "my_http_client");
     }
 
     //
     public static CloseableHttpResponse get(String url, List<NameValuePair> params, int connectTimeout,
                                             int readTimeout) throws IOException {
 
-        return MyHttpRawUtilsHelper.httpExe(
+        return httpClient.httpExe(
                 MyHttpRawUtilsHelper.getHttpGet(url, params), connectTimeout, readTimeout);
     }
 
@@ -57,7 +52,7 @@ public class MyHttpRawUtils {
     public static CloseableHttpResponse post(String url, List<NameValuePair> params, int connectTimeout,
                                              int readTimeout) throws IOException {
 
-        return MyHttpRawUtilsHelper.httpExe(
+        return httpClient.httpExe(
                 MyHttpRawUtilsHelper.getHttpPost(url, params, null), connectTimeout, readTimeout);
     }
 
@@ -76,14 +71,14 @@ public class MyHttpRawUtils {
             pairs.add(new BasicNameValuePair(key, params.get(key).toString()));
         }
 
-        return MyHttpRawUtilsHelper.httpExe(
+        return httpClient.httpExe(
                 MyHttpRawUtilsHelper.getHttpPost(url, pairs, headers), connectTimeout, readTimeout);
     }
 
     public static CloseableHttpResponse post(String url, String content, int connectTimeout,
                                              int readTimeout) throws IOException {
 
-        return MyHttpRawUtilsHelper.httpExe(
+        return httpClient.httpExe(
                 MyHttpRawUtilsHelper.getHttpPost(url, content), connectTimeout, readTimeout);
     }
 
