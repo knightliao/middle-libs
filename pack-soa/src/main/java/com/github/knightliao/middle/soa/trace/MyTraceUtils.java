@@ -7,6 +7,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,8 +30,12 @@ public class MyTraceUtils {
             HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
             String traceId = httpServletRequest.getHeader(TRACE_ID);
 
-            // put to mdc
-            MDC.put(TRACE_ID, traceId);
+            if (StringUtils.isEmpty(traceId)) {
+                traceId = newTrace();
+            } else {
+                // put to mdc
+                MDC.put(TRACE_ID, traceId);
+            }
 
             //
         } catch (Exception ex) {
@@ -39,7 +44,7 @@ public class MyTraceUtils {
     }
 
     // 新开一个trace
-    public static void newTrace() {
+    public static String newTrace() {
 
         try {
 
@@ -49,8 +54,13 @@ public class MyTraceUtils {
             MDC.put(TRACE_ID, traceId);
 
             //
+
+            return traceId;
+
         } catch (Exception ex) {
             log.error(ex.toString(), ex);
+
+            return "";
         }
     }
 
