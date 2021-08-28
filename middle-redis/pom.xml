@@ -5,13 +5,13 @@
     <parent>
         <groupId>com.github.knightliao.middle</groupId>
         <artifactId>middle-libs</artifactId>
-        <version>0.1.10-SNAPSHOT</version>
+        <version>0.1.11-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>middle-redis</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.10-SNAPSHOT</version>
+    <version>0.1.11-SNAPSHOT</version>
 
     <dependencies>
 
@@ -33,25 +33,25 @@
         <dependency>
             <groupId>com.github.knightliao.middle</groupId>
             <artifactId>pack-utils</artifactId>
-            <version>0.1.10-SNAPSHOT</version>
+            <version>0.1.11-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.github.knightliao.middle</groupId>
             <artifactId>pack-log</artifactId>
-            <version>0.1.10-SNAPSHOT</version>
+            <version>0.1.11-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.github.knightliao.middle</groupId>
             <artifactId>pack-metrics</artifactId>
-            <version>0.1.10-SNAPSHOT</version>
+            <version>0.1.11-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.github.knightliao.middle.bom</groupId>
             <artifactId>test-bom</artifactId>
-            <version>0.1.10-SNAPSHOT</version>
+            <version>0.1.11-SNAPSHOT</version>
             <scope>test</scope>
             <type>pom</type>
         </dependency>
