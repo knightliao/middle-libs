@@ -12,10 +12,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HttpParamUtils {
 
-    public static int httpClientCount;
-    public static int ioPerClient;
-    public static int maxConnTotal;
-    public static int connPerRoute;
+    private static final String PREFIX_CONFIG = "httpclient";
+
+    public static int asyncHttpClientCount;
+    public static int asyncIoPerClient;
+    public static int asyncMaxConnTotal;
+    public static int asyncConnPerRoute;
+
+    public static int syncMaxConnTotal;
+    public static int syncConnPerRoute;
 
     public static int connectionTimeout;
     public static int socketTimeout;
@@ -24,36 +29,44 @@ public class HttpParamUtils {
     static {
 
         //
-        String cpuProcessorNum = System.getProperty("cpu.processor.num");
+        String cpuProcessorNum = System.getProperty(PREFIX_CONFIG + ".cpu.processor.num");
         int cpuProcessorCount = StringUtils.isNoneBlank(cpuProcessorNum) ?
-                Integer.valueOf(cpuProcessorNum) : Runtime.getRuntime().availableProcessors();
+                Integer.parseInt(cpuProcessorNum) : Runtime.getRuntime().availableProcessors();
 
         //
-        String ioPerClientStr = System.getProperty("httpclient.ioNum");
-        String httpClientCountStr = System.getProperty("httpclient.count");
+        String asyncIoPerClientStr = System.getProperty(PREFIX_CONFIG + ".asyncIoPerClient");
+        String asyncHttpClientCountStr = System.getProperty(PREFIX_CONFIG + ".asyncHttpClientCount");
 
-        ioPerClient = StringUtils.isNoneBlank(ioPerClientStr) ? Integer.valueOf(ioPerClientStr) : cpuProcessorCount;
-        httpClientCount = StringUtils.isNoneBlank(httpClientCountStr) ? Integer.valueOf(httpClientCountStr) : 2;
-        log.info("http_client_count={} total_cpu={} iothread_per_client={}",
-                httpClientCount, cpuProcessorCount, ioPerClient);
-
-        //
-        String maxConnTotalStr = System.getProperty("httpclient.maxConnTotal");
-        String connPerRouteStr = System.getProperty("httpclient.perConnRoute");
-
-        maxConnTotal = StringUtils.isNoneBlank(maxConnTotalStr) ? Integer.valueOf(maxConnTotalStr) : 5000;
-        connPerRoute = StringUtils.isNoneBlank(connPerRouteStr) ? Integer.valueOf(connPerRouteStr) : 500;
-        log.info("http_client_maxConnTotal={} http_client_connPerRoute={}",
-                maxConnTotal, connPerRoute);
+        asyncIoPerClient =
+                StringUtils.isNoneBlank(asyncIoPerClientStr) ? Integer.parseInt(asyncIoPerClientStr)
+                        : cpuProcessorCount;
+        asyncHttpClientCount =
+                StringUtils.isNoneBlank(asyncHttpClientCountStr) ? Integer.parseInt(asyncHttpClientCountStr) : 2;
+        log.info("asyncHttpClientCount={} cpuProcessorCount={} asyncIoPerClient={}",
+                asyncHttpClientCount, cpuProcessorCount, asyncIoPerClient);
 
         //
-        String connectionTimeoutStr = System.getProperty("httpclient.connect.timeout");
-        String socketTimeoutStr = System.getProperty("httpclient.socket.timeout");
-        String requestTimeoutStr = System.getProperty("httpclient.request.timeout");
-        connectionTimeout = StringUtils.isNoneBlank(connectionTimeoutStr) ? Integer.valueOf(connectionTimeoutStr) : 200;
-        socketTimeout = StringUtils.isNoneBlank(socketTimeoutStr) ? Integer.valueOf(socketTimeoutStr) : 500;
-        requestTimeout = StringUtils.isNoneBlank(requestTimeoutStr) ? Integer.valueOf(requestTimeoutStr) : 100;
-        log.info("http_client_connect_timeout={} http_client_socket_timeout={} http_client_request_timeout={}",
+        String maxConnTotalStr = System.getProperty(PREFIX_CONFIG + ".asyncMaxConnTotal");
+        String connPerRouteStr = System.getProperty(PREFIX_CONFIG + ".asyncConnPerRoute");
+        String syncMaxConnTotalStr = System.getProperty(PREFIX_CONFIG + ".syncMaxConnTotal");
+        String syncConnPerRouteStr = System.getProperty(PREFIX_CONFIG + ".syncConnPerRoute");
+
+        asyncMaxConnTotal = StringUtils.isNoneBlank(maxConnTotalStr) ? Integer.parseInt(maxConnTotalStr) : 5000;
+        asyncConnPerRoute = StringUtils.isNoneBlank(connPerRouteStr) ? Integer.parseInt(connPerRouteStr) : 500;
+        syncMaxConnTotal = StringUtils.isNoneBlank(syncMaxConnTotalStr) ? Integer.parseInt(syncMaxConnTotalStr) : 100;
+        syncConnPerRoute = StringUtils.isNoneBlank(syncConnPerRouteStr) ? Integer.parseInt(syncConnPerRouteStr) : 20;
+        log.info("asyncMaxConnTotal={} asyncConnPerRoute={} syncMaxConnTotal={} syncConnPerRoute={}",
+                asyncMaxConnTotal, asyncConnPerRoute, syncMaxConnTotal, syncConnPerRoute);
+
+        //
+        String connectionTimeoutStr = System.getProperty(PREFIX_CONFIG + ".connect.timeout");
+        String socketTimeoutStr = System.getProperty(PREFIX_CONFIG + ".socket.timeout");
+        String requestTimeoutStr = System.getProperty(PREFIX_CONFIG + ".request.timeout");
+        connectionTimeout =
+                StringUtils.isNoneBlank(connectionTimeoutStr) ? Integer.parseInt(connectionTimeoutStr) : 200;
+        socketTimeout = StringUtils.isNoneBlank(socketTimeoutStr) ? Integer.parseInt(socketTimeoutStr) : 500;
+        requestTimeout = StringUtils.isNoneBlank(requestTimeoutStr) ? Integer.parseInt(requestTimeoutStr) : 100;
+        log.info("connectionTimeout={} socketTimeout={} requestTimeout={}",
                 connectionTimeout, socketTimeout, requestTimeout);
     }
 }

@@ -11,6 +11,8 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.message.BasicNameValuePair;
 
+import com.github.knightliao.middle.http.common.utils.HttpParamUtils;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -22,9 +24,9 @@ import lombok.extern.slf4j.Slf4j;
 public class MyHttpRawUtils {
 
     // 每个连接最多的并发
-    private static final int MAX_PRE_ROUTE = 20;
+    private static final int MAX_PRE_ROUTE = HttpParamUtils.syncConnPerRoute;
     // 全局最多的并发
-    private static final int MAX_TOTAL_ROUTE = 100;
+    private static final int MAX_TOTAL_ROUTE = HttpParamUtils.syncMaxConnTotal;
 
     static {
         HttpClientBuilder builder = HttpClientBuilder.create();
