@@ -37,7 +37,7 @@ public class QpsInterceptor {
         this.callback = callback;
     }
 
-    @Pointcut("@annotation(com.github.knightliao.middle.api.support.aop.QpsAnnotation)")
+    @Pointcut("@annotation(com.github.knightliao.middle.web.aop.QpsAnnotation)")
     public void around() {
     }
 
