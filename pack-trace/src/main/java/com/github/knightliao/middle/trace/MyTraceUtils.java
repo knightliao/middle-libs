@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MyTraceUtils {
 
     public static final String TRACE_ID = "traceId";
+    public static final String REQ_ID = "reqId";
 
     // 从web request继承
     public static void startTraceFromHttpRequest(ServletRequest servletRequest) {
@@ -56,6 +57,27 @@ public class MyTraceUtils {
             //
 
             return traceId;
+
+        } catch (Exception ex) {
+            log.error(ex.toString(), ex);
+
+            return "";
+        }
+    }
+
+    // 新开一个 reqId
+    public static String newReqId() {
+
+        try {
+
+            String reqId = UUID.randomUUID().toString().replace("-", "");
+
+            // put to mdc
+            MDC.put(REQ_ID, reqId);
+
+            //
+
+            return reqId;
 
         } catch (Exception ex) {
             log.error(ex.toString(), ex);
