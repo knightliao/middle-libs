@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import com.github.knightliao.middle.soa.trace.MyTraceUtils;
+import com.github.knightliao.middle.trace.MyTraceUtils;
 import com.github.knightliao.middle.thread.MyThreadContext;
 
 import lombok.extern.slf4j.Slf4j;

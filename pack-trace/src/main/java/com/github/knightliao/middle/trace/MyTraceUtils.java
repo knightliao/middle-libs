@@ -1,4 +1,4 @@
-package com.github.knightliao.middle.soa.trace;
+package com.github.knightliao.middle.trace;
 
 import java.util.UUID;
 

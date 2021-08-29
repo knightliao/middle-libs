@@ -57,7 +57,7 @@
 
         <dependency>
             <groupId>com.github.knightliao.middle</groupId>
-            <artifactId>pack-soa</artifactId>
+            <artifactId>pack-trace</artifactId>
             <version>0.1.13-SNAPSHOT</version>
         </dependency>
 

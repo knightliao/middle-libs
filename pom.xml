@@ -56,7 +56,7 @@
         <module>pack-lock</module>
         <module>pack-api</module>
         <module>pack-http</module>
-        <module>pack-soa</module>
+        <module>pack-trace</module>
         <module>pack-web</module>
     </modules>
 
