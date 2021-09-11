@@ -31,5 +31,8 @@ public class ExpressExecutorTestCase {
 
         Object value2 = expressExecutor.execute("$a + $b + $user1.getId()", map);
         Assert.assertEquals(value2, 4L);
+
+        Object value3 = expressExecutor.execute("($a > $b) && (true) ", map);
+        Assert.assertFalse((Boolean) value3);
     }
 }
