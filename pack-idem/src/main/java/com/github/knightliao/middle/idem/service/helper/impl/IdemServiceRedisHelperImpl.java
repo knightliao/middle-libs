@@ -1,8 +1,8 @@
 package com.github.knightliao.middle.idem.service.helper.impl;
 
-import com.github.knightliao.middle.idem.exception.IdemException;
 import com.github.knightliao.middle.idem.service.helper.IIdemServiceHelper;
 import com.github.knightliao.middle.idem.support.key.IdemKeyUtils;
+import com.github.knightliao.middle.lang.exceptions.exceptions.param.IdemException;
 import com.github.knightliao.middle.redis.IMyRedisService;
 
 /**

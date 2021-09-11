@@ -2,7 +2,7 @@ package com.github.knightliao.middle.lang.future;
 
 import java.util.concurrent.TimeUnit;
 
-import com.github.knightliao.middle.lang.exceptions.SocketRuntimeException;
+import com.github.knightliao.middle.lang.exceptions.exceptions.others.SocketRuntimeException;
 
 /**
  * @author knightliao

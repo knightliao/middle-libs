@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.github.knightliao.middle</groupId>
+        <artifactId>middle-libs</artifactId>
+        <version>0.1.15-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>pack-ruleengine</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1.15-SNAPSHOT</version>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>QLExpress</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.knightliao.middle</groupId>
+            <artifactId>pack-lang</artifactId>
+            <version>0.1.15-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.knightliao.middle.bom</groupId>
+            <artifactId>test-bom</artifactId>
+            <version>0.1.15-SNAPSHOT</version>
+            <scope>test</scope>
+            <type>pom</type>
+        </dependency>
+
+    </dependencies>
+
+</project>

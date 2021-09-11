@@ -1,6 +1,6 @@
 package com.github.knightliao.middle.idem.service.helper;
 
-import com.github.knightliao.middle.idem.exception.IdemException;
+import com.github.knightliao.middle.lang.exceptions.exceptions.param.IdemException;
 
 /**
  * @author knightliao

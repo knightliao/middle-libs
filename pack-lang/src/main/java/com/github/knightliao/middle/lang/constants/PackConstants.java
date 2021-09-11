@@ -13,5 +13,9 @@ public class PackConstants {
     public static final String DEFAULT_ERROR_VALUE_STRING = "";
 
     //
+    public static final String NULL_LOWERCASE = "null";
+    public static final String NULL = "NULL";
+
+    //
     public static final long DEFAULT_ERROR_UID = -1;
 }

@@ -1,7 +1,7 @@
 package com.github.knightliao.middle.idem;
 
-import com.github.knightliao.middle.idem.exception.IdemException;
 import com.github.knightliao.middle.idem.service.callback.IIdemBizCallback;
+import com.github.knightliao.middle.lang.exceptions.exceptions.param.IdemException;
 
 /**
  * @author knightliao

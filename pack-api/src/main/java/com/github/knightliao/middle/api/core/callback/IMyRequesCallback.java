@@ -1,7 +1,7 @@
 package com.github.knightliao.middle.api.core.callback;
 
 import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
-import com.github.knightliao.middle.lang.exceptions.BizException;
+import com.github.knightliao.middle.lang.exceptions.exceptions.biz.BizException;
 
 /**
  * @author knightliao

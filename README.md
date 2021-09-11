@@ -16,6 +16,7 @@ some sdks or tools for developing. 一些开发合集
 - pack-lock: 锁相关包，包括分布式锁
 - pack-log: 日志封装包
 - pack-metrics: 度量统计
+- pack-ruleengine 规则引擎
 - pack-trace: 跟踪相关
 - pack-threadcontext: 线程上下文相关包
 - pack-utils: 常见工具类包

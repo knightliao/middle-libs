@@ -1,10 +1,10 @@
 package com.github.knightliao.middle.idem.impl;
 
 import com.github.knightliao.middle.idem.IIdemService;
-import com.github.knightliao.middle.idem.exception.IdemException;
 import com.github.knightliao.middle.idem.service.callback.IIdemBizCallback;
 import com.github.knightliao.middle.idem.service.helper.IIdemServiceHelper;
 import com.github.knightliao.middle.idem.service.helper.impl.IdemServiceRedisHelperImpl;
+import com.github.knightliao.middle.lang.exceptions.exceptions.param.IdemException;
 import com.github.knightliao.middle.lock.IMyDistributeLock;
 import com.github.knightliao.middle.lock.impl.MyRedisDistributeLockImpl;
 import com.github.knightliao.middle.redis.IMyRedisService;

@@ -7,10 +7,10 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.github.knightliao.middle.lang.exceptions.SocketRuntimeException;
+import com.github.knightliao.middle.lang.exceptions.exceptions.others.SocketRuntimeException;
 import com.github.knightliao.middle.lang.future.IInvokeFuture;
 import com.github.knightliao.middle.lang.future.IInvokeFutureListener;
-import com.github.knightliao.middle.lang.security.ParamAssertUtil;
+import com.github.knightliao.middle.lang.security.BizParamAssertUtil;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,7 +33,7 @@ public class InvokeFutureImpl implements IInvokeFuture {
     @Override
     public void addListener(IInvokeFutureListener listener) {
 
-        ParamAssertUtil.assertArgumentNotNull(listener, "listener");
+        BizParamAssertUtil.assertArgumentNotNull(listener, "listener");
 
         notifyListener(listener);
         listeners.add(listener);
@@ -41,7 +41,7 @@ public class InvokeFutureImpl implements IInvokeFuture {
 
     private void notifyListener(IInvokeFutureListener listener) {
 
-        ParamAssertUtil.assertArgumentNotNull(listener, "listener");
+        BizParamAssertUtil.assertArgumentNotNull(listener, "listener");
 
         if (isDone()) {
 

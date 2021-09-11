@@ -4,7 +4,7 @@ import com.github.knightliao.middle.api.core.callback.IMyRequesCallback;
 import com.github.knightliao.middle.api.core.dto.MyBaseRequest;
 import com.github.knightliao.middle.api.core.dto.MyBaseResponse;
 import com.github.knightliao.middle.lang.constants.PackConstants;
-import com.github.knightliao.middle.lang.exceptions.BizException;
+import com.github.knightliao.middle.lang.exceptions.exceptions.biz.BizException;
 import com.github.knightliao.middle.log.LoggerUtil;
 
 import lombok.extern.slf4j.Slf4j;
@@ -39,10 +39,10 @@ public class MyFacadeTemplate {
         }
     }
 
-    private static int getBizErrorCode(BizException bizException) {
+    private static String getBizErrorCode(BizException bizException) {
 
         if (bizException == null) {
-            return PackConstants.DEFAULT_ERROR_VALUE_INT;
+            return PackConstants.DEFAULT_ERROR_VALUE_STRING;
         }
 
         return bizException.getBizErrorCode();
