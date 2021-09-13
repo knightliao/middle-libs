@@ -9,7 +9,7 @@ import com.github.knightliao.middle.lang.exceptions.exceptions.others.SystemExce
  * @email knightliao@gmail.com
  * @date 2021/9/12 01:57
  */
-public class ReflectionUtil {
+public class MyReflectionUtil {
 
     public static <T> T newWithConstructor(String className) {
 
