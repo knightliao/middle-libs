@@ -2,6 +2,7 @@ package com.github.knightliao.middle.utils.test.common;
 
 import org.junit.Test;
 
+import com.github.knightliao.middle.utils.devlopment.IdeaDetectUtil;
 import com.github.knightliao.test.support.utils.TestUtils;
 
 /**
@@ -14,5 +15,11 @@ public class TestCommonTestCase {
     public void test() {
 
         TestUtils.testAllClassUnderPackage("com.github.knightliao.middle.utils");
+    }
+
+    @Test
+    public void testIDea() {
+
+        System.out.println(IdeaDetectUtil.isInIDea());
     }
 }
