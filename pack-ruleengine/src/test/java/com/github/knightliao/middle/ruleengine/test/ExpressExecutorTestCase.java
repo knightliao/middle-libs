@@ -28,8 +28,10 @@ public class ExpressExecutorTestCase {
         map.put("c", 3);
 
         map.put("user1", new UserInfoTest(1, "1", 3));
+        map.put("user2", null);
 
-        Object value2 = expressExecutor.execute("$a + $b + $user1.getId()", map);
+        Object value2 = expressExecutor.execute(
+                "if($user2!=null){ $a + $b + $user2.getId() } else { $a + $b + $user1.getId() }", map);
         Assert.assertEquals(value2, 4L);
 
         Object value3 = expressExecutor.execute("($a > $b) && (true) ", map);
