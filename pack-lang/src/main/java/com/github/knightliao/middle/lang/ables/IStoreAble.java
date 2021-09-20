@@ -3,9 +3,9 @@ package com.github.knightliao.middle.lang.ables;
 /**
  * @author knightliao
  * @email knightliao@gmail.com
- * @date 2021/9/11 16:36
+ * @date 2021/9/11 16:35
  */
-public interface InitAble {
+public interface IStoreAble {
 
-    void init();
+    String getStoreKey();
 }

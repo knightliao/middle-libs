@@ -5,7 +5,7 @@ package com.github.knightliao.middle.lang.ables;
  * @email knightliao@gmail.com
  * @date 2021/9/11 16:35
  */
-public interface StoreAble {
+public interface ITimeoutAble {
 
-    String getStoreKey();
+    int getTimeoutMs();
 }
