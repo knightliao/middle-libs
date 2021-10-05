@@ -5,26 +5,26 @@
     <parent>
         <groupId>com.github.knightliao.middle</groupId>
         <artifactId>middle-libs</artifactId>
-        <version>0.1.15-SNAPSHOT</version>
+        <version>0.1.16-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>pack-idgen</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.15-SNAPSHOT</version>
+    <version>0.1.16-SNAPSHOT</version>
 
     <dependencies>
 
         <dependency>
             <groupId>com.github.knightliao.middle</groupId>
-            <artifactId>middle-redis</artifactId>
-            <version>0.1.15-SNAPSHOT</version>
+            <artifactId>pack-redis</artifactId>
+            <version>0.1.16-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.github.knightliao.middle.bom</groupId>
             <artifactId>test-bom</artifactId>
-            <version>0.1.15-SNAPSHOT</version>
+            <version>0.1.16-SNAPSHOT</version>
             <scope>test</scope>
             <type>pom</type>
         </dependency>

@@ -5,7 +5,7 @@
 
     <groupId>com.github.knightliao.middle</groupId>
     <artifactId>middle-libs</artifactId>
-    <version>0.1.15-SNAPSHOT</version>
+    <version>0.1.16-SNAPSHOT</version>
     <name>middle-libs</name>
     <packaging>pom</packaging>
 
@@ -50,7 +50,8 @@
         <module>pack-log</module>
         <module>pack-metrics</module>
         <module>pack-utils</module>
-        <module>middle-redis</module>
+        <module>pack-redis</module>
+        <module>pack-zk</module>
         <module>pack-idem</module>
         <module>pack-idgen</module>
         <module>pack-lock</module>

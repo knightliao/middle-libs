@@ -6,7 +6,7 @@ some sdks or tools for developing. 一些开发合集
 [![Build Status](https://travis-ci.com/knightliao/middle-libs.svg?branch=main)](https://travis-ci.com/knightliao/middle-libs)
 [![Coverage Status](https://coveralls.io/repos/github/knightliao/middle-libs/badge.svg)](https://coveralls.io/github/knightliao/middle-libs)
 
-- middle-redis: redis的封装包
+- pack-redis: redis的封装包
 - pack-api: api相关类封装
 - pack-bom: 基础软件必使用包，包括 logback, 单元测试test 等
 - pack-http: 简单的http请求client
