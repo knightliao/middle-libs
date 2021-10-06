@@ -58,6 +58,7 @@
         <module>pack-http</module>
         <module>pack-trace</module>
         <module>pack-ruleengine</module>
+        <module>pack-msg</module>
         <module>pack-web</module>
     </modules>
 
