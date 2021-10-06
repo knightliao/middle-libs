@@ -3,6 +3,7 @@ package com.github.knightliao.middle.utils.net;
 import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -77,5 +78,27 @@ public class IpUtils {
 
     private static String normalizeHostAddress(InetAddress localHost) {
         return localHost instanceof Inet6Address ? "[" + localHost.getHostAddress() + "]" : localHost.getHostAddress();
+    }
+
+    private static boolean validateIp(String ip) {
+        return ip != null && ip.length() != 0 && !ip.equalsIgnoreCase("unknown");
+    }
+
+    /**
+     * @return
+     * @Description: 获取机器名
+     */
+    public static String getHostName() throws Exception {
+
+        try {
+            InetAddress addr = InetAddress.getLocalHost();
+            String hostname = addr.getHostName();
+
+            return hostname;
+
+        } catch (UnknownHostException e) {
+
+            throw new Exception();
+        }
     }
 }

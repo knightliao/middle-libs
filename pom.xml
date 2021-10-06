@@ -11,8 +11,6 @@
 
     <properties>
 
-        <!-- 模块版本号 -->
-
         <!-- Spring項目配置 -->
         <encoding>UTF-8</encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,6 +32,7 @@
         <netty.version>4.1.12.Final</netty.version>
         <aspectj.version>1.8.9</aspectj.version>
         <commons.lang3.version>3.5</commons.lang3.version>
+        <commons.io.version>2.5</commons.io.version>
         <lombok.version>1.16.20</lombok.version>
         <guava.version>19.0</guava.version>
 
@@ -84,6 +83,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons.lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
             </dependency>
 
             <dependency>
@@ -152,7 +157,7 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.7</version>
                 <configuration>
-                    <generateBackupPoms>false</generateBackupPoms>  
+                    <generateBackupPoms>false</generateBackupPoms>
                 </configuration>
             </plugin>
             <plugin>

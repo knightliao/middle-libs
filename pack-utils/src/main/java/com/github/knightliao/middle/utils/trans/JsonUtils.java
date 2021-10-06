@@ -5,6 +5,7 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -37,6 +38,30 @@ public class JsonUtils {
             log.error("to json cause exception", ex);
             throw new RuntimeException(ex);
         }
+    }
+
+    /**
+     * JSON串转换为Java泛型对象，可以是各种类型，此方法最为强大。用法看测试用例。
+     *
+     * @param <T>
+     * @param jsonString JSON字符串
+     * @param tr         TypeReference,例如: new TypeReference< List<FamousUser> >(){}
+     * @return List对象列表
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> T json2GenericObject(String jsonString,
+                                           TypeReference<T> tr) {
+
+        if (jsonString == null || "".equals(jsonString)) {
+            return null;
+        } else {
+            try {
+                return (T) OBJECT_MAPPER.readValue(jsonString, tr);
+            } catch (Exception e) {
+                log.warn("json error:" + e.getMessage());
+            }
+        }
+        return null;
     }
 
     public static String toJson(Object obj) {
