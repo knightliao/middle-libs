@@ -18,9 +18,11 @@ import org.apache.kafka.common.TopicPartition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.github.knightliao.middle.msg.domain.consumer.IMessageListener;
 import com.github.knightliao.middle.msg.domain.consumer.dispatcher.IMessageDispatcher;
-import com.github.knightliao.middle.msg.domain.domain.KafkaOffset;
+import com.github.knightliao.middle.msg.domain.consumer.dispatcher.MessageDispatcherImpl;
 import com.github.knightliao.middle.msg.domain.consumer.subscribe.ISourceSubscribe;
+import com.github.knightliao.middle.msg.domain.domain.KafkaOffset;
 import com.github.knightliao.middle.msg.impl.kafka.consumer.config.KafkaConsumeConfig;
 import com.github.knightliao.middle.msg.support.constants.LoggerNames;
 import com.github.knightliao.middle.utils.thread.NamedThreadFactory;
@@ -66,13 +68,13 @@ public class KafkaSequenceSubscribe implements ISourceSubscribe {
 
     public KafkaSequenceSubscribe(int consumerNum, String consumerName,
                                   String topicStr, String broker,
-                                  String consumerGroup, IMessageDispatcher messageDispatcher,
+                                  String consumerGroup, IMessageListener messageListener,
                                   int pollTimeoutMs, int printFrequency) {
 
         this.topicStr = topicStr;
         this.broker = broker;
         this.consumerGroup = consumerGroup;
-        this.dispatcher = messageDispatcher;
+        this.dispatcher = new MessageDispatcherImpl(messageListener);
         this.pollTimeoutMs = pollTimeoutMs;
         this.printFrequency = printFrequency;
 
