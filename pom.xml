@@ -60,6 +60,7 @@
         <module>pack-ruleengine</module>
         <module>pack-msg</module>
         <module>pack-web</module>
+        <module>pack-springboot-ext</module>
     </modules>
 
     <dependencies>

@@ -32,6 +32,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.knightliao.middle</groupId>
+            <artifactId>pack-utils</artifactId>
+            <version>0.1.16-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.github.knightliao.middle.bom</groupId>
             <artifactId>test-bom</artifactId>
             <version>0.1.16-SNAPSHOT</version>
